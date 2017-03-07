@@ -37,10 +37,10 @@ public class CountWords {
         Scanner sc = new Scanner(file);
         long sum = 0;
         while (sc.hasNext()) {
-            String NumNext = sc.nextLine();
-            if (NumNext.matches("^-?\\d+$")) {
+            String numnext = sc.nextLine();
+            if (numnext.matches("^-?\\d+$")) {
                 try {
-                    sum += Integer.parseInt(NumNext);
+                    sum += Integer.parseInt(numnext);
                 } catch (Exception e) {
                     //ignored
                 }
@@ -62,10 +62,10 @@ public class CountWords {
         Scanner sc = new Scanner(file);
         String result = "" ;
         while (sc.hasNext()) {
-            String SNext = sc.nextLine();
-            if (!(SNext.matches("^-?\\d+$") || SNext.isEmpty())) {
+            String snext = sc.nextLine();
+            if (!(snext.matches("^-?\\d+$") || snext.isEmpty())) {
                 try {
-                    result += SNext + " " ;
+                    result += snext + " " ;
                 } catch (Exception e) {
                     //ignored
                 }
