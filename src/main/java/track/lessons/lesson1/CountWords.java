@@ -1,7 +1,6 @@
 package track.lessons.lesson1;
 
 import java.io.File;
-import java.io.InterruptedIOException;
 import java.util.Scanner;
 
 /**
@@ -36,16 +35,16 @@ public class CountWords {
 
     public long countNumbers(File file) throws Exception {
         Scanner sc = new Scanner(file);
-        String sCurrentLine;
         long sum = 0;
         while (sc.hasNext()) {
             String s_next = sc.nextLine();
             if (s_next.matches("^-?\\d+$")) {
-                sum += Integer.parseInt(s_next);
-            } else {
-                continue;
+                try {
+                    sum += Integer.parseInt(s_next);
+                } catch (Exception e) {
+                    //ignored
+                }
             }
-
         }
         return sum;
     }
@@ -61,16 +60,17 @@ public class CountWords {
      */
     public String concatWords(File file) throws Exception {
         Scanner sc = new Scanner(file);
-        String sCurrentLine;
-        String result = "";
+        String result = "" ;
         while (sc.hasNext()) {
             String s_next = sc.nextLine();
             if (!(s_next.matches("^-?\\d+$") || s_next.isEmpty())) {
-                result += s_next + " " ;
-            } else {
-                continue;
+                try {
+                    result += s_next + " " ;
+                } catch (Exception e) {
+                    //ignored
+                }
             }
         }
-            return result;
+        return result;
     }
 }
