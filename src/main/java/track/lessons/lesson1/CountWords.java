@@ -73,18 +73,4 @@ public class CountWords {
         }
             return result;
     }
-
-    public static void main(String[] strings) {
-        String file_name = "/home/fedor/track_java/track17-spring/words.txt";
-        CountWords cw = new CountWords();
-        File file = new File(file_name);
-        try {
-            long cnum = cw.countNumbers(file);
-            String cwords = cw.concatWords(file);
-            System.out.println(cnum);
-            System.out.println(cwords);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
