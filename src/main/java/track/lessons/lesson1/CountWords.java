@@ -36,12 +36,11 @@ public class CountWords {
 
     public long countNumbers(File file) throws Exception {
         Scanner sc = new Scanner(file);
-        String sCurrentLine;
         long sum = 0;
         while (sc.hasNext()) {
-            String s_next = sc.nextLine();
-            if (s_next.matches("^-?\\d+$")) {
-                sum += Integer.parseInt(s_next);
+            String snext = sc.nextLine();
+            if (snext.matches("^-?\\d+$")) {
+                sum += Integer.parseInt(snext);
             } else {
                 continue;
             }
@@ -61,23 +60,22 @@ public class CountWords {
      */
     public String concatWords(File file) throws Exception {
         Scanner sc = new Scanner(file);
-        String sCurrentLine;
         String result = "";
         while (sc.hasNext()) {
-            String s_next = sc.nextLine();
-            if (!(s_next.matches("^-?\\d+$") || s_next.isEmpty())) {
-                result += s_next + " " ;
+            String snext = sc.nextLine();
+            if (!(snext.matches("^-?\\d+$") || snext.isEmpty())) {
+                result += snext + " " ;
             } else {
                 continue;
             }
         }
-            return result;
+        return result;
     }
 
     public static void main(String[] strings) {
-        String file_name = "/home/fedor/track_java/track17-spring/words.txt";
+        String filename = "/home/fedor/track_java/track17-spring/words.txt";
         CountWords cw = new CountWords();
-        File file = new File(file_name);
+        File file = new File(filename);
         try {
             long cnum = cw.countNumbers(file);
             String cwords = cw.concatWords(file);

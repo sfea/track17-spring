@@ -12,7 +12,9 @@ import java.util.NoSuchElementException;
 public class MyArrayList extends List {
 
     private int[] array;
+
     private int pointer = 0;
+
     public static final int DEFAULT_CAPACITY = 16;
 
     public MyArrayList() {
@@ -23,7 +25,7 @@ public class MyArrayList extends List {
         array = new int[capacity];
     }
 
-    public void resize(int[] array, int newlength){
+    public void resize(int[] array, int newlength) {
         int[] newArray = new int[newlength];
         System.arraycopy(array, 0, newArray, 0, array.length);
         array = newArray;
@@ -31,16 +33,18 @@ public class MyArrayList extends List {
 
     @Override
     void add(int item) {
-        if (pointer >= array.length - 1)
+        if (pointer >= array.length - 1) {
             resize(array, (array.length + 1) * 2);
+        }
         array[pointer] = item;
         pointer++;
     }
 
     @Override
     int remove(int idx) throws NoSuchElementException {
-        if (idx < 0 || idx >= pointer)
+        if (idx < 0 || idx >= pointer) {
             throw new NoSuchElementException();
+        }
         System.arraycopy(array, idx + 1, array, idx, pointer - idx);
         pointer--;
         return 0;
@@ -48,8 +52,9 @@ public class MyArrayList extends List {
 
     @Override
     int get(int idx) throws NoSuchElementException {
-        if (idx < 0 || idx >= pointer)
+        if (idx < 0 || idx >= pointer) {
             throw new NoSuchElementException();
+        }
         return array[idx];
     }
 
