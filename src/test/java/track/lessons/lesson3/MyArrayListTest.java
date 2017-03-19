@@ -14,7 +14,9 @@ public class MyArrayListTest {
     public void testResize1() {
         MyArrayList list = new MyArrayList(0);
         for (int i = 0; i < 1000; i++) {
+            System.out.println("OK1");
             list.add(i);
+            System.out.println("OK2");
         }
 
         Assert.assertTrue(list.size() == 1000);
@@ -28,9 +30,7 @@ public class MyArrayListTest {
         }
 
         for (int i = 0; i < 100; i++) {
-            System.out.println("OK1");
             list.remove(0);
-            System.out.println("OK2");
         }
         Assert.assertTrue(list.size() == 0);
 

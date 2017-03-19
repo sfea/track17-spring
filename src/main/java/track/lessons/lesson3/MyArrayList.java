@@ -11,9 +11,9 @@ import java.util.NoSuchElementException;
  */
 public class MyArrayList extends List {
 
-    private int[] array;
+    public int[] array;
 
-    private int pointer = 0;
+    public int pointer = 0;
 
     public static final int DEFAULT_CAPACITY = 16;
 
@@ -25,16 +25,16 @@ public class MyArrayList extends List {
         array = new int[capacity];
     }
 
-    public void resize(int[] array, int newlength) {
+    public int[] resize(int[] array, int newlength) {
         int[] newArray = new int[newlength];
-        System.arraycopy(array, 0, newArray, 0, array.length);
-        array = newArray;
+        System.arraycopy(array, 0, newArray, 0, pointer);
+        return newArray;
     }
 
     @Override
     void add(int item) {
         if (pointer >= array.length - 1) {
-            resize(array, (array.length + 1) * 2);
+            array = resize(array, (array.length + 1) * 2);
         }
         array[pointer] = item;
         pointer++;
