@@ -21,6 +21,7 @@ public class Container {
      *  Например, Car car = (Car) container.getById("carBean")
      */
     public Object getById(String id) {
+
         return null;
     }
 
@@ -29,6 +30,7 @@ public class Container {
      * Например, Car car = (Car) container.getByClass("track.container.beans.Car")
      */
     public Object getByClass(String className) {
+
         return null;
     }
 }

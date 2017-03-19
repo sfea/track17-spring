@@ -28,7 +28,9 @@ public class MyArrayListTest {
         }
 
         for (int i = 0; i < 100; i++) {
+            System.out.println("OK1");
             list.remove(0);
+            System.out.println("OK2");
         }
         Assert.assertTrue(list.size() == 0);
 

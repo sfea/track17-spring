@@ -10,10 +10,10 @@ import java.util.NoSuchElementException;
  * Сейчас все методы помечены как abstract - эту метку можно убирать, если вы реализовываете его в этом классе
  */
 public abstract class List {
-
     /**
      * Добавить элемент в конец списка
      */
+
     abstract void add(int item);
 
     /**
